@@ -1,0 +1,229 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+ul{
+  display: flex;
+}
+.header_right{
+  display: flex;
+}
+.header_left{
+  display: flex;
+}
+li{
+  padding: 0 20px;
+  list-style-type: none;
+
+}
+a{
+  text-decoration:none;
+  color: black;
+}
+
+.hiddenmenu{
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+}
+.hiddenmenu ul{
+  display: block;
+}
+.hiddenmenu:nth-child(1){
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  right: 60px;
+  top: 18px;
+}
+.hiddenmenu:nth-child(2){
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  right: 147px;
+  top: 18px;
+}
+.hiddenmenu:nth-child(3){
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  right: 246px;
+  top: 18px;
+}
+.hiddenmenu:nth-child(4){
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  right: 345px;
+  top: 18px;
+}
+.hiddenmenu:nth-child(5){
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  right: 432px;
+  top: 18px;
+}
+.hamb{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 50px;
+  display: none;
+  z-index: 300;
+}
+.bigmenu{
+  display: none;
+  position: relative;
+}
+.hambmenu{
+  width: 30%;
+  height: 30%;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-image: url("img/Simonei.png");
+  background-position: center;
+
+}
+.dragomatonti{
+  opacity: 0;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("img/DragoDelleMadonne.png");
+  background-size: cover;
+}
+.dragomatonti img{
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width:1000px) {
+  .header_right, .header_left{
+    display: none;
+  }
+  nav{
+    height: 100vh;
+    align-items: center;
+  }
+  .hamb{
+    display: block;
+    transition: 1.5s;
+  }
+  .hambmenu:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50% , 0);
+    animation: spin1 1s linear infinite;
+  }
+  @keyframes spin1 {
+      0% {
+          transform: skewX(0deg);
+      }
+      25% {
+          transform: skewX(-20deg);
+      }
+      75% {
+          transform: skewX(20deg);
+      }
+      100% {
+          transform: skewX(0deg);
+      }
+
+
+
+  }
+  .hambmenu:nth-child(2){
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    animation: spin2 8s linear infinite;
+  }
+  @keyframes spin2 {
+      0% {
+          transform: rotate(-1turn);
+      }
+  }
+  .hambmenu:nth-child(3){
+    position: absolute;
+    top: 64%;
+    left: 13%;
+    animation: spin3 0.5s linear infinite;
+  }
+  @keyframes spin3 {
+      0% {
+          transform: rotate(1turn);
+      }
+  }
+  .hambmenu:nth-child(4){
+    position: absolute;
+    top: 64%;
+    left: 86%;
+    transform: translate(-100% , 0);
+    animation: spin4 6s linear infinite;
+  }
+  @keyframes spin4 {
+      0% {
+          transform: rotate(1turn);
+      }
+  }
+  .hambmenu:nth-child(5){
+    position: absolute;
+    top: 25%;
+    left: 98%;
+    transform: translate(-100%, 0);
+    animation: spin5 2s linear infinite;
+  }
+  @keyframes spin5 {
+      50% {
+          transform: scale(2,5) translate(-50%, 0);
+      }
+  }
+  .bigmenu{
+    margin: auto;
+    border-radius: 100%;
+    width: 60vw;
+    height: 60vw;
+    display: block;
+    opacity:0;
+  }
+
+}
+
+#bt{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  right: 50%;
+  top: 50%;
+  transform: translate(50% , -50%);
+  /* z-index: 300; */
+  opacity: 0;
+}
+
+.animhamb{
+  width: 12%;
+  right: 50%;
+  top: 50%;
+  transform: translate(50% , -50%);
+  z-index: 300;
+}
+.animbig{
+  animation: spin 10s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(1turn);
+    }
+}
+/* .matontiClass{
+  display: block;
+  z-index: 999;
+  background-image: url("img/DragoDelleMadonne.png");
+} */
