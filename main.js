@@ -7,21 +7,25 @@ $(document).ready(function(){
   a.each(function(){
     $(this).mouseover({ asdfasdf : (a.length-1) - i}, function(eventData) {
       for (var i = 0; i < a.length; i++) {
-        if ($(b[i]).show()) {
+        if ($(b[i]).hasClass("giacomo")) {
           $(b[i]).hide();
+          $(b[i]).removeClass("giacomo");
         }
       }
       $(b[eventData.data.asdfasdf]).show();
+      $(b[eventData.data.asdfasdf]).addClass("giacomo")
     });
     i++;
   });
 
-
+console.log();
 
   $("html").click(function(){
     for (var i = 0; i < a.length; i++) {
-      if ($(b[i]).show()) {
+      if ($(b[i]).hasClass("giacomo")) {
         $(b[i]).hide();
+        $(b[i]).removeClass("giacomo");
+
       }
     }
   });
@@ -60,6 +64,7 @@ $(document).ready(function(){
       });
     }
   });
+  // LA MADONNA
   $("#bt").click(function(){
       $(".bigmenu").hide();
       $(".dragomatonti").animate({
@@ -75,6 +80,8 @@ $(document).ready(function(){
         }
       )
   });
+
+  // reset on resize
   $(window).resize(function() {
     if ($(this).width() > 1000) {
         bigmenu.removeClass("animbig");
@@ -86,7 +93,7 @@ $(document).ready(function(){
   });
 });
 
-
+//gestione audio
 const audio = document.getElementById("au");
 let bt = document.getElementById("bt");
 // console.log(audio);
